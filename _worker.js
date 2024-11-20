@@ -31,7 +31,7 @@ export default {
           return Response.redirect(pageUrl, 302);
         } else {
           // Retorna 404 se o link não foi encontrado
-          return new Response('Link not found', { status: 404 });
+          return new Response(null, { status: 404 });
         }
       } catch (error) {
         // Trata erros inesperados
@@ -40,6 +40,6 @@ export default {
     }
 
     // Responde com 400 se a URL não contiver um identificador válido
-    return new Response('Invalid request', { status: 400 });
+    return new Response(null, { status: 400 });
   }
 };
